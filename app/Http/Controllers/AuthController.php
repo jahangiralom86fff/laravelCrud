@@ -20,7 +20,7 @@ class AuthController extends Controller
         ]);
 
         $admin = Admin::where('email', $request->email)->first();
-
+        
         if ($admin && Hash::check($request->password, $admin->password)) {
 
             session([

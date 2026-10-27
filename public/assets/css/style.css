@@ -964,6 +964,22 @@ ul{
     font-family: var(--font-family-robo);
     margin-top: 15px;
 }
+.shedule-viw{
+    margin-top: 30px;
+}
+.shedule-viw tr th{
+    font-size: 18px;
+    font-family: var(--font-family-robo);
+    color: var(--dj-black-color);
+    text-transform: capitalize;
+}
+.shedule-viw tr td{
+    font-size: 16px;
+    font-family: var(--font-family-robo);
+    color: var(--text-blue-color);
+    text-transform: capitalize;
+    padding-left: 12px;
+}
 /*exam shedule End*/
  
 /*fotter section start now*/

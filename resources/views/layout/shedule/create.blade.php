@@ -109,7 +109,7 @@
                        <div class="shedule mt-4">
                             <div class="row">
                                 <div class="col-lg-12">    
-                                    <form action="{{ route('exam_schedule.store') }}" method="POST">
+                                    <form action="{{ route('shedule.store') }}" method="POST">
                                         @csrf
                                         <label class="w-100">Exam Name</label>
                                         <select name="exam_name" class="form-control mb-3" required>

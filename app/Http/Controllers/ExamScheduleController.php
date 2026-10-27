@@ -37,8 +37,26 @@ class ExamScheduleController extends Controller
             'courseCodes'
         ));
     }
+
+    
+    public function index()
+    {
+        $schedules = ExamSchedule::all();
+        return view('layout.shedule.index', compact('schedules'));
+    }
+      
     public function store(Request $request)
     {
-        
+        $data = $request->validate([
+            'exam_name'    => 'required',
+            'semester'     => 'required',
+            'subject_name' => 'required',
+            'course_code'  => 'required|max:10',
+            'year'         => 'required|integer',
+        ]);
+
+       return redirect()->route('shedule.index')->with('submittedData', $data);
     }
+      
+    
 }

@@ -126,7 +126,12 @@ Route::resource('download', DownloadController::class);
 Route::get('/schdule/create', [ScheduleController::class, 'create'])->name('shedule.create');
 Route::get('/exam-schedule/create',[ExamScheduleController::class, 'create'])->name('shedule.create');
 
-Route::post('/exam-schedule',[ExamScheduleController::class, 'store'])->name('exam_schedule.store');
+Route::post('/exam-schedule',[ExamScheduleController::class, 'store'])->name('shedule.store');
 Route::resource('schdule', ExamScheduleController::class);
+Route::get('/index/view', [ExamScheduleController::class, 'index'])->name('shedule.index');
+
+Route::get('/exam-schedule/{id}/edit', 
+    [ExamScheduleController::class, 'edit']
+)->name('shedule.edit');
 //shedule module end//
 
