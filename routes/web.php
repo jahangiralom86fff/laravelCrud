@@ -130,8 +130,6 @@ Route::post('/exam-schedule',[ExamScheduleController::class, 'store'])->name('sh
 Route::resource('schdule', ExamScheduleController::class);
 Route::get('/index/view', [ExamScheduleController::class, 'index'])->name('shedule.index');
 
-Route::get('/exam-schedule/{id}/edit', 
-    [ExamScheduleController::class, 'edit']
-)->name('shedule.edit');
+Route::get('/exam-schedule/{id}/edit', [ExamScheduleController::class, 'edit'])->name('shedule.edit');
 //shedule module end//
 

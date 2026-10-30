@@ -120,9 +120,95 @@
                         </div>
                     </div>
                     <!--student setting system end-->
+
+                    <!--student accoradian-->
+                    <div class="accrodian-card mb-5 mt-4">
+                        <div class="table-responsive">
+                            <table class="table nowrap table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>side bars</th>
+                                        <th>status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Class Schedules</td>
+                                        <td>
+                                            <div class="switch">
+                                                <input type="checkbox" class="fieldSwitch" id="switch1">
+                                                <label for="switch1"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Exam Schedules</td>
+                                        <td>
+                                            <div class="switch">
+                                                <input type="checkbox" class="fieldSwitch" id="switch2" checked>
+                                                <label for="switch2"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Attendances</td>
+                                        <td>
+                                            <div class="switch">
+                                                <input type="checkbox" class="fieldSwitch" id="switch2" checked>
+                                                <label for="switch2"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fees Reports</td>
+                                        <td>
+                                            <div class="switch">
+                                                <input type="checkbox" class="fieldSwitch" id="switch2" checked>
+                                                <label for="switch2"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Notices</td>
+                                        <td>
+                                            <div class="switch">
+                                                <input type="checkbox" class="fieldSwitch" id="switch2" checked>
+                                                <label for="switch2"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Assignments</td>
+                                        <td>
+                                            <div class="switch">
+                                                <input type="checkbox" class="fieldSwitch" id="switch2" checked>
+                                                <label for="switch2"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--student accorodian-->
                 </div>
             </div>
         </div>
         <!--dashboard section start now-->
+        <script>
+            document.querySelectorAll(".fieldSwitch").forEach(function(input) {
+            const parent = input.closest(".switch");
+
+            function updateSwitch() {
+                parent.classList.toggle("active", input.checked);
+                parent.classList.toggle("inactive", !input.checked);
+            }
+
+            updateSwitch();
+
+            input.addEventListener("change", updateSwitch);
+
+        });
+        </script>
     </body>
 </html>
