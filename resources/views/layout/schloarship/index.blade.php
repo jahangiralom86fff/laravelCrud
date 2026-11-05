@@ -14,6 +14,9 @@
                 <div class="row">
                     <!--cv header-->
                     <div class="col-lg-4 col-sm-4">
+                        <div class="back-btn">
+                            <a href="{{ route('scholarship.index') }}" class="btn">Back home</a>
+                        </div>
                         <div class="cv-imgbox">
                             <img src="{{ asset('assets/images/login-page/cv-1.jpg')}}" alt="cv-logo">
                         </div>

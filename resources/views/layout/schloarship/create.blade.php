@@ -200,7 +200,7 @@
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
 
-                            <label for="board" class="w-100 label-title">Board</label>
+                            <label for="board" class="w-100 label-title">SSC Board</label>
                             <input type="text" name="board" value="{{ old('board') }}" placeholder="Enter your Board">
                             @error('board')
                                 <p class="text-danger">{{ $message }}</p>
