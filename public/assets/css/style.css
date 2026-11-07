@@ -1046,6 +1046,42 @@ ul{
     padding-left: 12px;
 }
 /*exam shedule End*/
+
+/*batches module start now*/
+marquee{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--secondary-font);
+    color: var(--text-blue-color);
+    margin-bottom: 20px;
+}
+.needs_batch{
+    width: 96%;
+    padding: 20px 15px;
+    background: var(--bg-color);
+    margin-top: 20px;
+    position: relative;
+}
+.create-title{
+    margin-bottom: 0;
+    color: #000;
+    font-size: 17px;
+    font-weight: 400;
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+.create-title::before{
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 20px;
+    background: var(--text-blue-color);
+    left: 0;
+    top: 21px;
+}
+/*batches module*/
  
 /*fotter section start now*/
 .fotter{

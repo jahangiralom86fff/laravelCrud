@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\ExamScheduleController;
+use App\Http\Controllers\BatchesController;
 use Illuminate\Support\Facades\DB;
 
 
@@ -132,4 +134,8 @@ Route::get('/index/view', [ExamScheduleController::class, 'index'])->name('shedu
 
 Route::get('/exam-schedule/{id}/edit', [ExamScheduleController::class, 'edit'])->name('shedule.edit');
 //shedule module end//
+
+//batches module start now//
+Route::get('/batches/index', [BatchesController::class, 'index'])->name('batches.index');
+//batches module End//
 

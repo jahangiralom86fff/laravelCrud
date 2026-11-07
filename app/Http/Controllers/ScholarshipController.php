@@ -68,6 +68,7 @@ class ScholarshipController extends Controller
         $scholarship->hours = $request->hours;
         $scholarship->h_degree = $request->h_degree;
         $scholarship->board = $request->board;
+        
         $scholarship->pass_year = $request->pass_year;
         $scholarship->group = $request->group;
         $scholarship->hsc_group = $request->hsc_group;

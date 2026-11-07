@@ -14,9 +14,6 @@
                 <div class="row">
                     <!--cv header-->
                     <div class="col-lg-4 col-sm-4">
-                        <div class="back-btn">
-                            <a href="{{ route('scholarship.index') }}" class="btn">Back home</a>
-                        </div>
                         <div class="cv-imgbox">
                             <img src="{{ asset('assets/images/login-page/cv-1.jpg')}}" alt="cv-logo">
                         </div>
@@ -191,6 +188,7 @@
                             browsing, email management, file organization, typing, and basic online safety. Advanced
                             skills involve coding, data analysis
                         </p>
+                        <a href="#" class="btn btn-primary fw-bold">Print Now</a>
                     </div>
                     <!--skill area End-->
                 </div>

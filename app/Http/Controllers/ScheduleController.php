@@ -18,12 +18,14 @@ class ScheduleController extends Controller
     }
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        // Session-এ স্থায়ীভাবে রাখবে
+        session()->put('submittedData', $data);
+
+        return redirect()->route('schedule.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Schedule $schedule)
     {
         //
