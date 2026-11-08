@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Student dashboard</title>
+        <title>Students Batches</title>
         <!--all css js link-->
         @include ('layout.apps.assets')
         <!--all css js link end-->
@@ -95,17 +95,98 @@
                             <div class="needs_batch">
                                 <h4 class="create-title">Create Batch</h4>
                                 <form action="" method="post">
-                                    <label for="title" class="w-100 mt-4 mb-2">Title*</label>
-                                    <input type="text" name="title" class="form-control" placeholder="title">
+                                    <label for="title" class="w-100 mt-4 mb-2 title-txt">Title*</label>
+                                    <input type="text" name="title" class="form-control input-title" placeholder="title">
 
-                                    <label for="title" class="w-100 mt-4 mb-2">Start Date*</label>
-                                    <input type="date" name="date" class="form-control" placeholder="title">
+                                    <label for="title" class="w-100 mt-4 mb-2 title-txt">Start Date*</label>
+                                    <input type="date" name="date" class="form-control input-title" placeholder="title">
+
+                                    <div class="form-field mt-4 mb-4">
+                                        <input type="checkbox" id="checkAll" class="check checkItem">
+                                        <label for="checkAll" class="fill-title">All</label>
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="checkbox" id="civil" class="checkItem">
+                                        <label for="civil" class="fill-title">Civil Engineering</label>
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="checkbox" id="computer" class="checkItem">
+                                        <label for="computer" class="fill-title">Computer Engineering</label>
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="checkbox" id="english" class="checkItem">
+                                        <label for="english" class="fill-title">English Studies</label>
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="checkbox" id="arts" class="checkItem">
+                                        <label for="arts" class="fill-title">Fine Arts and Design</label>
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="checkbox" id="informatics" class="checkItem">
+                                        <label for="informatics" class="fill-title">Informática Básica</label>
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="checkbox" id="politics" class="checkItem">
+                                        <label for="politics" class="fill-title">Politics and Governance</label>
+                                    </div>
+                                    <div class="form-field mb-4">
+                                        <input type="checkbox" id="social" class="checkItem">
+                                        <label for="social" class="fill-title">Social Sciences</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary fw-bold">Save</button>
                                 </form>
                             </div>
                         </div>
                         <div class="col-lg-8">
                             <div class="needs_batch">
-                                    
+                                <h4 class="create-title">Batch List</h4>
+
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Title</th>
+                                            <th scope="col">Start Date</th>
+                                            <th scope="col">Program</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                            <td>@mdo</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                            <td>@mdo</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>John</td>
+                                            <td>Doe</td>
+                                            <td>@social</td>
+                                            <td>@mdo</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4</th>
+                                            <td>John</td>
+                                            <td>Doe</td>
+                                            <td>@social</td>
+                                            <td>@mdo</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -114,6 +195,15 @@
             </div>
         </div>
         <!--dashboard section start now-->
-      
+        <script>
+           //date picker//
+            document.querySelectorAll('input[type="date"]').forEach(function (input) {
+
+                input.addEventListener("click", function () {
+                    this.showPicker();
+                });
+
+            });
+        </script>
     </body>
 </html>

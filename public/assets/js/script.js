@@ -61,6 +61,23 @@ if (birthDateInput && ageDisplay) {
 
 }
 
+//input check//
+document.addEventListener("DOMContentLoaded", function () {
+    const checkAll = document.getElementById("checkAll");
+    const checkItems = document.querySelectorAll(".checkItem");
+
+    checkAll.addEventListener("change", function () {
+
+        checkItems.forEach(function (checkbox) {
+            checkbox.checked = this.checked;
+        }, this);
+
+    });
+
+});
+//date picker//
+
+
 
 
 

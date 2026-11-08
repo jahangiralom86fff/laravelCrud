@@ -1081,6 +1081,67 @@ marquee{
     left: 0;
     top: 21px;
 }
+.needs_batch .title-txt{
+    font-size: var(--secondary-font);
+    color: var(--dj-black-color);
+    font-family: var(--font-family-robo);
+    text-transform: var(--text-transform);
+}
+.needs_batch .input-title{
+    font-size: 15px;
+    color: var(--dj-black-color);
+    font-family: var(--font-family-robo);
+}
+.needs_batch .input-title::placeholder{
+    text-transform: var(--text-transform);
+}
+.checkItem {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+}
+.checkItem:checked {
+    background: #0d6efd;
+    border-color: #0d6efd;
+}
+.checkItem:checked::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    top: 2px;
+    left: 6px;
+    transform: rotate(45deg);
+}
+.needs_batch .fill-title{
+    font-size: 15px;
+    font-family: var(--font-family-robo);
+    text-transform: var(--text-transform);
+}
+.needs_batch .form-field{
+    margin:10px 0;
+}
+.needs_batch button{
+    position: relative;
+    padding: 7px 20px;
+    font-family: var(--font-family-robo);
+}
+.needs_batch .table thead th{
+    border-bottom: 0px;
+    background: #3ea1e4;
+    color: #fff !important;
+    padding: 8px 5px;
+    font-size: var(--secondary-font);
+    font-family: var(--font-family-robo);
+}
 /*batches module*/
  
 /*fotter section start now*/
