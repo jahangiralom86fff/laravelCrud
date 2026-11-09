@@ -1095,7 +1095,7 @@ marquee{
 .needs_batch .input-title::placeholder{
     text-transform: var(--text-transform);
 }
-.checkItem {
+.checkitem {
     appearance: none;
     -webkit-appearance: none;
     width: 20px;
@@ -1106,11 +1106,11 @@ marquee{
     position: relative;
     vertical-align: middle;
 }
-.checkItem:checked {
+.checkitem:checked {
     background: #0d6efd;
     border-color: #0d6efd;
 }
-.checkItem:checked::after {
+.checkitem:checked::after {
     content: "";
     position: absolute;
     width: 6px;
@@ -1141,6 +1141,35 @@ marquee{
     padding: 8px 5px;
     font-size: var(--secondary-font);
     font-family: var(--font-family-robo);
+}
+.needs_batch .badge-item{
+    padding-top: 25px;
+}
+.needs_batch .badge{
+    background: blue;
+    display: inline-block;
+    color: var(--bg-color);
+    font-family: var(--font-family-robo);
+}
+.needs_batch .batch-subject .subject{
+    font-size: 13px;
+    color: white;
+    font-family: var(--font-family-robo);
+    background: #3ea1e4;
+    padding: 2px 2px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    display: inline-block;
+
+}
+.needs_batch .edu-item{
+    color: var(--dj-black-color);
+    font-size: 15px;
+    font-family: var(--font-family-robo);
+    padding-top: 20px;
+}
+.needs_batch .trash_edit{
+    padding-top: 25px;
 }
 /*batches module*/
  

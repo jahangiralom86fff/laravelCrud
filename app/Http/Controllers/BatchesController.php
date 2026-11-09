@@ -2,34 +2,58 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Batches;
+use App\Models\Batch;
 use Illuminate\Http\Request;
 
 class BatchesController extends Controller
 {
     public function index()
     {
-        return view('layout.batches.index');
+        $batches = Batch::latest()->get();
+        return view('layout.batches.index', compact('batches'));
     }
-
-    public function create()
-    {
-    
-    }
-
+  
     public function store(Request $request)
     {
-        
+        $request->validate([
+            'title' => 'required',
+            'start_date' => 'required|date',
+            'programs' => 'required|array',
+        ]);
+
+        Batch::create([
+            'title' => $request->title,
+            'start_date' => $request->start_date,
+            'programs' => $request->programs,
+        ]);
+
+        return redirect()->route('batches.index')->with('success', 'Batch saved successfully!');
     }
 
-    public function show(Batches $batches)
+    //edit function//
+    public function edit($id)
     {
-        
-    }
-    public function edit(Batches $batches)
-    {
-        
+        $batch = Batch::findOrFail($id);
+
+        return response()->json($batch);
     }
 
-   
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'title' => 'required',
+            'start_date' => 'required|date',
+            'programs' => 'required|array',
+        ]);
+
+        $batch = Batch::findOrFail($id);
+
+        $batch->title = $request->title;
+        $batch->start_date = $request->start_date;
+        $batch->programs = $request->programs;
+
+        $batch->save();
+
+        return redirect()->back()->with('success', 'Batch Updated Successfully!');
+    }
 }

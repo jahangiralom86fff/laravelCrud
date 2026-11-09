@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('batches', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->date('start_date');
+            $table->string('programs');
+            $table->string('status')->default('Active');
             $table->timestamps();
         });
     }
