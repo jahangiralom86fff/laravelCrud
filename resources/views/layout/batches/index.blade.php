@@ -109,37 +109,30 @@
                                         <input type="checkbox" id="checkAll" class="checkitem">
                                         <label for="checkAll" class="fill-title">All</label>
                                     </div>
-
                                     <div class="form-field">
                                         <input type="checkbox" id="civil" name="programs[]" value="Civil Engineering" class="programCheck checkitem">
                                         <label for="civil" class="fill-title">Civil Engineering</label>
                                     </div>
-
                                     <div class="form-field">
                                         <input type="checkbox" id="computer" name="programs[]" value="Computer Engineering" class="programCheck checkitem">
                                         <label for="computer" class="fill-title">Computer Engineering</label>
                                     </div>
-
                                     <div class="form-field">
                                         <input type="checkbox" id="english" name="programs[]" value="English Studies" class="programCheck checkitem">
                                         <label for="english" class="fill-title">English Studies</label>
                                     </div>
-
                                     <div class="form-field">
                                         <input type="checkbox" id="mechanical" name="programs[]" value="Mechanical Engineering" class="programCheck checkitem">
                                         <label for="mechanical" class="fill-title">Mechanical Engineering</label>
                                     </div>
-
                                     <div class="form-field">
                                         <input type="checkbox" id="politics" name="programs[]" value="Politics and Governance" class="programCheck checkitem">
                                         <label for="politics" class="fill-title">Politics and Governance</label>
                                     </div>
-
                                     <div class="form-field">
                                         <input type="checkbox" id="social" name="programs[]" value="Social Sciences" class="programCheck checkitem">
                                         <label for="social" class="fill-title">Social Sciences</label>
                                     </div>
-
                                     <button type="submit" class="btn btn-primary mt-3">
                                         Save
                                     </button>
@@ -175,73 +168,57 @@
                                                     <span class="badge badge-pill badge-success">Active</span>
                                                 </td>
                                                 <td class="trash_edit">
-                                                    <!-- Button trigger modal -->
-                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                        <span class=""><i class="fa-solid fa-pen-to-square"></i></span
-                                                        onclick="editBatch({{ $batch->id }})">
-                                                    </button>
-
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <!-- Button trigger modal -->
+                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="editBatch({{ $batch->id }})">
+                                                            <span class=""><i class="fa-solid fa-pen-to-square"></i></span>
+                                                        </button>
+                                                        <div class="delete-btn">
+                                                            <span class="btn btn-danger" onclick="confirmDelete()"><i class="fa-solid fa-trash"></i></span>
+                                                        </div> 
+                                                    </div>
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h4 class="modal-title create-title mb-3" id="exampleModalLabel">Create Batch</h4>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    <div class="modal fade" id="exampleModal" tabindex="-1">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Edit Batch</h4>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                                </div>
+                                                                <form id="editBatchForm">
+                                                                    @csrf
+                                                                    @method('PUT')
+                                                                    <div class="modal-body">
+                                                                        <label class="fill-title mb-2">Batch Title</label>
+                                                                        <input type="text" name="title" id="edit_title" class="form-control mb-3 input-title" required>
+
+                                                                        <label  class="fill-title mb-2">Start Date</label>
+                                                                        <input type="date" name="start_date"  id="edit_start_date" class="form-control mb-3 input-title" required>
+
+                                                                        <label class="text-success fw-bold"  class="fill-title"> Assign Program *</label>
+                                                                        @php
+                                                                            $programList = ['Civil Engineering','Computer Engineering','English Studies','Mechanical Engineering','Politics and Governance','Social Sciences'];
+                                                                        @endphp
+                                                                        @foreach($programList as $key => $program)
+                                                                            <div class="form-field mb-2">
+                                                                                <input type="checkbox" id="edit_program_{{ $key }}" name="programs[]" value="{{ $program }}" class="editProgramCheck">
+                                                                                <label for="edit_program_{{ $key }}"  class="fill-title">
+                                                                                    {{ $program }}
+                                                                                </label>
+                                                                            </div>
+                                                                        @endforeach
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                    </div>
+
+                                                                </form>
+
+                                                            </div>
                                                         </div>
-                                                        <div class="modal-body">
-                                                            <form id="editBatchForm" method="POST">
-                                                                @csrf
-                                                                @method('PUT')
 
-                                                                <label class="w-100 title-txt mb-2">Batch Title</label>
-                                                                <input type="text" name="title" class="form-control input-title mb-2" placeholder="Batch Number" required>
-
-                                                                <label class="title-txt mb-2">Start Date</label>
-                                                                <input type="date" name="start_date" class="form-control input-title mb-3" required>
-
-                                                                <label class="fill-title text-success fw-bold">Assign Program *</label>
-                                                               
-                                                                <div class="form-field">
-                                                                    <input type="checkbox" id="civil" name="programs[]" value="Civil Engineering" class="programCheck checkitem">
-                                                                    <label for="civil" class="fill-title">Civil Engineering</label>
-                                                                </div>
-
-                                                                <div class="form-field">
-                                                                    <input type="checkbox" id="computer" name="programs[]" value="Computer Engineering" class="programCheck checkitem">
-                                                                    <label for="computer" class="fill-title">Computer Engineering</label>
-                                                                </div>
-
-                                                                <div class="form-field">
-                                                                    <input type="checkbox" id="english" name="programs[]" value="English Studies" class="programCheck checkitem">
-                                                                    <label for="english" class="fill-title">English Studies</label>
-                                                                </div>
-
-                                                                <div class="form-field">
-                                                                    <input type="checkbox" id="mechanical" name="programs[]" value="Mechanical Engineering" class="programCheck checkitem">
-                                                                    <label for="mechanical" class="fill-title">Mechanical Engineering</label>
-                                                                </div>
-
-                                                                <div class="form-field">
-                                                                    <input type="checkbox" id="politics" name="programs[]" value="Politics and Governance" class="programCheck checkitem">
-                                                                    <label for="politics" class="fill-title">Politics and Governance</label>
-                                                                </div>
-
-                                                                <div class="form-field">
-                                                                    <input type="checkbox" id="social" name="programs[]" value="Social Sciences" class="programCheck checkitem">
-                                                                    <label for="social" class="fill-title">Social Sciences</label>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                            <button type="submit" class="btn btn-primary">Save changes</button>
-                                                        </div>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-
-                                                    <span class="btn btn-danger" onclick="confirmDelete()"><i class="fa-solid fa-trash"></i></span>
+                                                    </div> 
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -250,7 +227,6 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -292,71 +268,110 @@
                     }
                 });
             }
-
-            //edit//
+            // Edit Batch
             function editBatch(id) {
-                    fetch(`/batches/${id}/edit`)
-                        .then(response => {
-                            if (!response.ok) throw new Error('Data not found');
-                            return response.json();
-                        })
-                        .then(data => {
+                $.ajax({
+                    url: `/batches/${id}/edit`,
+                    type: 'GET',
+                    success: function(response) {
+                        // Input value set
+                        $('#edit_title').val(response.title);
+                        $('#edit_start_date').val(response.start_date);
+                        // আগে সব checkbox unchecked
+                        $('.editProgramCheck').prop('checked', false);
+                        // আগের selected program checked
+                        response.programs.forEach(function(program) {
+                            $('.editProgramCheck').each(function() {
 
-                            // Form action
-                            document.getElementById('editBatchForm').action =
-                                `/batches/${id}`;
+                                if ($(this).val() === program) {
+                                    $(this).prop('checked', true);
+                                }
 
-                            // Batch title
-                            document.getElementById('editTitle').value = data.title;
-
-                            // Start date
-                            document.getElementById('editDate').value =
-                                data.start_date.substring(0, 10);
-
-                            // Checkbox reset and select
-                            let checks = document.querySelectorAll('.editProgram');
-
-                            checks.forEach(item => {
-                                item.checked = (data.programs || []).includes(item.value);
                             });
 
-                            // Select All
-                            document.getElementById('editCheckAll').checked =
-                                checks.length > 0 && [...checks].every(item => item.checked);
-
-                            // Show modal
-                            bootstrap.Modal.getOrCreateInstance(
-                                document.getElementById('editBatchModal')
-                            ).show();
-
-                        })
-                        .catch(error => console.error(error));
-                }
-
-
-                // Select All
-                document.getElementById('editCheckAll').addEventListener('change', function () {
-
-                    document.querySelectorAll('.editProgram').forEach(item => {
-                        item.checked = this.checked;
-                    });
+                        });
+                        // Update form action
+                        $('#editBatchForm').attr(
+                            'action',
+                            `/batches/${id}`
+                        );
+                        // Modal show
+                        $('#exampleModal').modal('show');
+                    },
+                    error: function() {
+                        Swal.fire('Error!', 'Batch data not found!', 'error');
+                    }
 
                 });
 
+            }
+            // Update Batch
+            $('#editBatchForm').on('submit', function(e) {
+                e.preventDefault();
+                let form = $(this);
+                $.ajax({
+                    url: form.attr('action'),
+                    type: 'POST',
+                    data: form.serialize(),
 
-                // Individual checkbox
-                document.querySelectorAll('.editProgram').forEach(item => {
+                    success: function(response) {
+                        $('#exampleModal').modal('hide');
+                        Swal.fire({
+                            title: 'Success!',
+                            text: response.message,
+                            icon: 'success'
+                        }).then(() => {
+                            location.reload();
 
-                    item.addEventListener('change', function () {
+                        });
 
-                        let checks = document.querySelectorAll('.editProgram');
+                    },
+                    error: function(xhr) {
+                        if (xhr.status === 422) {
+                            Swal.fire(
+                                'Validation Error!',
+                                'Please check all required fields.',
+                                'error'
+                            );
 
-                        document.getElementById('editCheckAll').checked =
-                            [...checks].every(check => check.checked);
+                        } else {
 
-                    });
+                            Swal.fire(
+                                'Error!',
+                                'Something went wrong!',
+                                'error'
+                            );
+                        }
+                    }
 
                 });
-            </script>
+            });
+            function editBatch(id) {
+                $.ajax({
+                    url: "{{ url('/batches') }}/" + id + "/edit",
+                    type: "GET",
+                    success: function(response) {
+                        $('#edit_title').val(response.title);
+                        $('#edit_start_date').val(response.start_date);
+                        $('.editProgramCheck').prop('checked', false);
+                        response.programs.forEach(function(program) {
+                            $('.editProgramCheck').each(function() {
+
+                                if ($(this).val() === program) {
+                                    $(this).prop('checked', true);
+                                }
+                            });
+                        });
+                        $('#editBatchForm').attr('action', '/batches/' + id);
+                        $('#exampleModal').modal('show');
+
+                    },
+                    error: function(xhr) {
+                        console.log(xhr.responseText);
+                        Swal.fire('Error!', xhr.responseJSON?.message || 'Something went wrong!', 'error');
+                    }
+                });
+            }
+        </script>
     </body>
 </html>

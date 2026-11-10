@@ -33,17 +33,28 @@ class BatchesController extends Controller
     //edit function//
     public function edit($id)
     {
-        $batch = Batch::findOrFail($id);
+        $batch = Batch::find($id);
 
-        return response()->json($batch);
+        if (!$batch) {
+            return response()->json([
+                'message' => 'Batch not found',
+            ], 404);
+        }
+
+        return response()->json([
+            'id' => $batch->id,
+            'title' => $batch->title,
+            'start_date' => date('Y-m-d', strtotime($batch->start_date)),
+            'programs' => $batch->programs ?? [],
+        ]);
     }
-
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required',
+            'title' => 'required|string|max:255',
             'start_date' => 'required|date',
-            'programs' => 'required|array',
+            'programs' => 'required|array|min:1',
+            'programs.*' => 'string',
         ]);
 
         $batch = Batch::findOrFail($id);
@@ -54,6 +65,11 @@ class BatchesController extends Controller
 
         $batch->save();
 
-        return redirect()->back()->with('success', 'Batch Updated Successfully!');
+        return response()->json([
+            'success' => true,
+            'message' => 'Batch updated successfully!'
+        ]);
     }
+ 
+ 
 }

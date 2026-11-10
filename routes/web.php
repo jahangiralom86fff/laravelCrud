@@ -138,9 +138,13 @@ Route::get('/exam-schedule/{id}/edit', [ExamScheduleController::class, 'edit'])-
 //batches module start now//
 Route::get('/batches/index', [BatchesController::class, 'index'])->name('batches.index');
 Route::post('/batches/store', [BatchesController::class, 'store'])->name('batches.store');
-//batches module End//
-Route::get('/batches/{id}/edit', [BatchController::class, 'edit']);
 
-Route::put('/batches/{id}', [BatchController::class, 'update'])
+//batches module edit//
+Route::get('/batches/{id}/edit', [BatchesController::class, 'edit'])
+    ->name('batches.edit');
+
+Route::put('/batches/{id}', [BatchesController::class, 'update'])
     ->name('batches.update');
+//batches module End//
+
 

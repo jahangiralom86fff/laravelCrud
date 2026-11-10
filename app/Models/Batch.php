@@ -11,9 +11,9 @@ class Batch extends Model
         'start_date',
         'programs',
     ];
-
     protected $casts = [
         'programs' => 'array',
         'start_date' => 'date',
     ];
+
 }
