@@ -12,7 +12,6 @@ class BatchesController extends Controller
         $batches = Batch::latest()->get();
         return view('layout.batches.index', compact('batches'));
     }
-  
     public function store(Request $request)
     {
         $request->validate([
@@ -70,6 +69,5 @@ class BatchesController extends Controller
             'message' => 'Batch updated successfully!'
         ]);
     }
- 
  
 }
