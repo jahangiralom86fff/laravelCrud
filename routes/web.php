@@ -9,6 +9,7 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Models\Student;
 use App\Http\Controllers\AdmissionController;
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DownloadController;
@@ -142,5 +143,9 @@ Route::post('/batches/store', [BatchesController::class, 'store'])->name('batche
 Route::get('/batches/{id}/edit', [BatchesController::class, 'edit'])->name('batches.edit');
 Route::put('/batches/{id}', [BatchesController::class, 'update'])->name('batches.update');
 //batches module End//
+
+//application module//
+Route::get('/admission/application', [ApplicationController::class, 'index'])->name('application.index');
+//Application Module//
 
 

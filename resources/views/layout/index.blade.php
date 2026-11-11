@@ -74,6 +74,24 @@
                         </div>
                         <!--two End-->
 
+                        <!--Admission module html-->
+                        <div class="d-inline-flex gap-1 mt-2 w-100">
+                            <a class="btn" data-bs-toggle="collapse" href="#collapseExamplt " role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <span class="wedget-icon"><i class="fa-solid fa-building-columns"></i></span>Admission
+                            </a>
+                        </div>
+                        <div class="collapse" id="collapseExamplt">
+                            <div class="card card-body">
+                                <a href="" class="menu-link">Applications</a>
+                                <a href="" class="menu-link">New Registation</a>
+                                <a href="" class="menu-link">Student List</a>
+                                <a href="" class="menu-link">Transfers</a>
+                                <a href="" class="menu-link">Status Types</a>
+                                <a href="" class="menu-link">ID Cards</a>
+                            </div>
+                        </div>
+                        <!--Admissiion module-->
+
                         <!--single menu bar-->
                         <div class="single-menu-bar">
                             <ul>

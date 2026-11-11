@@ -167,8 +167,10 @@ ul{
     color: var(--dj-black-color);
     text-transform: var(--text-transform);
     font-size: var(--secondary-font);
+    font-family: var(--font-family-robo);
     font-weight: 450;
     position: relative;
+    margin-bottom: 7px;
 }
 .layout-menu .layout-main-menu .card-body .menu-link::before{
     content: '';
@@ -185,7 +187,7 @@ ul{
     padding: 10px 6px;
     padding-left: 12px;
     text-decoration: none;
-    font-size: var(--primary-font-size);
+    font-size: var(--primary-font-size) !important;
     color: #696cff;
     background-color: rgba(105, 108, 255, 0.16);
     border-radius: 6px;
@@ -198,10 +200,11 @@ ul{
     padding: 0px 5px;
 }
 .layout-menu .layout-main-menu .btn{
-    font-size: var(--secondary-font);
+    font-size: var(--primary-font-size);
     color: var(--dj-black-color);
     text-transform: var(--text-transform);
     font-weight: var(--font-weight-six-hundred);
+
 }
 .layout-menu .layout-main-menu .single-menu-bar ul{
     padding-left: 15px;
@@ -212,7 +215,7 @@ ul{
 }
 .layout-menu .layout-main-menu .single-menu-bar ul li a{
     text-decoration: none;
-    font-size: var(--secondary-font);
+    font-size: var(--primary-font-size);
     font-weight: var(--font-weight-six-hundred);
     color: var(--dj-black-color);
     text-transform: var(--text-transform);
@@ -1172,7 +1175,63 @@ marquee{
     padding-top: 25px;
 }
 /*batches module*/
- 
+
+/*application module*/
+.application_form{
+    width: 90%;
+    background: var(--bg-color);
+    padding: 8px 10px;
+    margin: 20px 0;
+    box-shadow: 0px 0px 4px #c8b5bb;
+    transition: all 500ms ease-in-out;
+}
+.application_form:hover{
+    box-shadow: 0px 0px 8px #c8b5bb;
+}
+.application_form label{
+    font-size: var(--secondary-font);
+    color: var(--dj-black-color);
+    font-family: var(--font-family-robo);
+    text-transform: var(--text-transform);
+}
+.application_form .pb-10{
+    padding-bottom: 10px;
+}
+.application_form .application_item{
+    width: 98%;
+    padding: 10px 6px;
+    font-family: var(--font-family-robo);
+    font-size: var(--secondary-font);
+    border: none;
+    border-radius: 4px;
+}
+.application_form .date_picker{
+    width: 98%;
+    padding: 8px 6px;
+    font-family: var(--font-family-robo);
+    font-size: var(--secondary-font);
+    border: none;
+    border-radius: 4px;
+    outline: none;
+}
+.application_form .date_picker:focus{
+    border-bottom: 1px solid green;
+}
+.application_form .regi_num{
+    width: 98%;
+    padding: 8px 6px;
+    font-family: var(--font-family-robo);
+    font-size: var(--secondary-font);
+    border: none;
+    border-radius: 4px;
+    margin-top: 7px;
+    outline: none;
+}
+.application_form .regi_num:focus{
+    border-bottom:  1px solid green;
+}
+/*application module*/
+
 /*fotter section start now*/
 .fotter{
     width: 90%;
