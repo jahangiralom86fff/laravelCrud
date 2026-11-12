@@ -82,7 +82,7 @@
                         <div class="collapse" id="collapseExamplt">
                             <div class="card card-body">
                                 <a href="{{ route('application.index') }}" class="menu-link">Applications</a>
-                                <a href="" class="menu-link">New Registation</a>
+                                <a href="{{ route('admission.registration') }}" class="menu-link">New Registation</a>
                                 <a href="" class="menu-link">Student List</a>
                                 <a href="" class="menu-link">Transfers</a>
                                 <a href="" class="menu-link">Status Types</a>

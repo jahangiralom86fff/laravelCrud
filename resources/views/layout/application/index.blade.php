@@ -158,25 +158,25 @@
                             </div>
                             <div class="col-md-2 col-lg-2">
                                 <div class="date-picker">
-                                    <label for="date" class="form-label w-100">Datepicker</label>
-                                    <input type="date" class="date_picker" required>
+                                    <label for="date" class="form-label w-100">From Date</label>
+                                    <input type="date" class="date_picker" name="start_date" required>
                                 </div>
                             </div>
                             <div class="col-md-2 col-lg-2">
                                 <div class="date-picker">
                                     <label for="date" class="form-label w-100">Datepicker</label>
-                                    <input type="date" class="date_picker" required>
+                                    <input type="date" class="date_picker" name="end_date" required>
                                 </div>
                             </div>
                             <div class="col-md-2 col-lg-2">
                                 <div class="form-flied">
                                     <label for="text">Registration No</label>
-                                    <input type="text" name="regi" class="regi_num" placeholder="Registaion" required>
+                                    <input type="text" name="registation_no" class="regi_num" placeholder="Registaion" required>
                                 </div>
                             </div>
                             <div class="col-md-2 col-lg-2">
-                                <button type="submit" class="btn btn-info btn-filter"><i class="fas fa-search">
-                                    Search</i>
+                                <button type="submit" class="btn btn-info btn-filter"><i class="fas fa-search"></i>
+                                    Search
                                 </button>
                             </div>
                         </div>

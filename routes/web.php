@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Student;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\AdmissionRegiController;
 use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DownloadController;
@@ -147,5 +148,9 @@ Route::put('/batches/{id}', [BatchesController::class, 'update'])->name('batches
 //application module//
 Route::get('/admission/application', [ApplicationController::class, 'index'])->name('application.index');
 //Application Module//
+
+//admission regi module//
+Route::get('/admission/registration', [AdmissionRegiController::class, 'create'])->name('admission.registration');
+//admission regi module End//
 
 
